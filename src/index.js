@@ -4,10 +4,14 @@ import './index.css'
 import Card from './Card'
 import * as serviceWorker from './serviceWorker'
 
+var list = [{ name: 'Michelle', number: '+123 345 789', email: 'michelle@obama.com' },
+  { name: 'Robert', number: '+678 342 927', email: 'Robert@denero.com' },
+  { name: 'Opera', number: '+1 (604) 683-0222', email: 'opera@opera.com' }]
+
+var cards = list.map((contact) => <Card key={contact.name} name={contact.name} number={contact.number} email={contact.email} />)
+
 ReactDOM.render(<div>
-  <Card name='Michelle' number='+123 345 789' email='michelle@obama.com' />
-  <Card name='Robert' number='+678 342 927' email='Robert@denero.com' />
-  <Card name='Opera' number='+1 (604) 683-0222' email='opera@opera.com' />
+  {cards}
                 </div>
 , document.getElementById('root'))
 
